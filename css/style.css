@@ -14,6 +14,9 @@
   --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
   --section-padding: 7rem;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   --bg-color: hsl(var(--hue-1), 100%, 97%);
@@ -551,7 +554,43 @@ nav.Container {
   z-index: -1;
 }
 /* --------------- Portfolio Section Styling --------------- */
+.protfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.protfolio-title {
+  margin-bottom: 1rem;
+}
+.filter-btn {
+  display: inline-block;
+  color: var(--heading-color);
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: 0.1rem;
+  margin-left: 1.3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.protfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
 
+.prt-img {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--bg-color-2);
+}
+
+.prt-img img {
+  width: 100%;
+}
 /* --------------- Testimonials Section Styling --------------- */
 
 /* --------------- Contact Section Styling --------------- */
