@@ -1,0 +1,547 @@
+/* --------------- Fonts used : Poppins + Abril Fatface --------------- */
+@import url(//db.onlinewebfonts.com/c/02f502e5eefeb353e5f83fc5045348dc?family=GE+SS+Two+Light);
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500&display=swap");
+/* --------------- Website Theme --------------- */
+
+:root {
+  --hue-1: 257;
+  --hue-2: 47;
+  --main-color-1: hsl(var(--hue-1), 100%, 60%);
+  --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+  --main-color-2: hsl(var(--hue-2), 100%, 61%);
+  --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
+  --section-padding: 7rem;
+}
+
+body {
+  --bg-color: hsl(var(--hue-1), 100%, 97%);
+  --bg-color-1: hsl(var(--hue-1), 100%, 95.5%);
+  --bg-color-2: #fff;
+  --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+  --bg-color-transparent: rgba(255, 255, 255, 0.6);
+  --heading-color: hsl(var(--hue-1), 61%, 24%);
+  --text-color: hsl(var(--hue-1), 17%, 63%);
+}
+
+body.dark {
+  --bg-color: hsl(var(--hue-1), 19%, 15%);
+  --bg-color-1: hsl(var(--hue-1), 21%, 11%);
+  --bg-color-2: hsl(var(--hue-1), 23%, 19%);
+  --bg-color-3: hsl(var(--hue-1), 23%, 24%);
+  --bg-color-transparent: hsla(var(--hue-1), 23%, 19%, 0.6);
+  --heading-color: hsl(var(--hue-1), 100%, 95%);
+  --text-color: hsl(var(--hue-1), 14%, 51%);
+}
+
+/* --------------- General Styles --------------- */
+
+.logo-Foward {
+  width: 30px;
+  height: 30px;
+}
+.logo-Foward img {
+  width: 100%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--heading-color);
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+}
+
+::selection {
+  background-color: hsla(var(--hue-1), 100%, 60%, 0.9);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --------------- Reusable CSS Code --------------- */
+.section {
+  position: relative;
+  padding: var(--section-padding) 0;
+}
+.text {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin: 2rem 0;
+}
+.Container {
+  position: relative;
+  width: 100%;
+  max-width: 75rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.logo {
+  margin-right: 1.5rem;
+  height: 120px;
+  line-height: 120px;
+  font-family: "Abril Fatface", cursive;
+  color: var(--heading-color);
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+}
+.logo span {
+  color: var(--main-color-1);
+}
+
+/* --------------- Navbar Styling --------------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: 0.3s;
+}
+header.scrolled {
+  background-color: var(--bg-color-transparent);
+  box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+}
+header.scrolled .logo {
+  height: 80px;
+  line-height: 80px;
+}
+
+nav.Container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.links {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.links ul {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.nav-link {
+  display: inline-block;
+  margin: 0 0.7rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  font-weight: 500;
+  opacity: 0.9;
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 10px;
+  background-color: var(--main-color-1);
+  bottom: 0;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: -1;
+  left: -5px;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.nav-link:hover {
+  color: var(--heading-color);
+}
+.nav-link:hover::after {
+  opacity: 0.3;
+  width: 100%;
+}
+.ToggleBtn {
+  color: var(--heading-color);
+  min-width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  background-color: var(--bg-color-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.06);
+}
+.ToggleBtn:hover {
+  filter: brightness(97%);
+}
+
+/* --------------- Showcase Area Styling --------------- */
+.showCaseArea {
+  padding: 120px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.showCaseArea .Container {
+  max-height: 600px;
+  height: calc(100vh - 120px);
+  display: grid;
+  grid-template-columns: 1fr 550px;
+  align-items: center;
+}
+.subheading {
+  color: var(--heading-color);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border-left: 3px solid var(--main-color-2);
+  padding: 0.13rem 0.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.heading {
+  color: var(--heading-color);
+  font-family: "Abril Fatface", cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.showCaseArea .subheading {
+  margin-bottom: 0.7rem;
+}
+.showCaseArea .heading {
+  font-size: 3rem;
+}
+.showCaseArea .text {
+  margin: 0.8rem 0;
+  font-size: 1.3rem;
+  font-family: "GE SS", sans-serif;
+  line-height: 1.2;
+  width: 500px;
+  text-align: right;
+}
+.cta {
+  margin-top: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+.cta .btn {
+  margin-right: 1.5rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.75rem;
+  border-radius: 17px;
+  background: var(--main-color-1);
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn:hover {
+  background: var(--main-color-dark-1);
+}
+.btn.secondary-btn {
+  background-color: transparent;
+  color: var(--main-color-1);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  border-bottom: 2.5px solid var(--main-color-2);
+  border-radius: 0px;
+  position: relative;
+}
+.btn.secondary-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--main-color-1);
+}
+.btn.secondary-btn::before {
+  content: "";
+  position: absolute;
+  height: 2.5px;
+  bottom: -2.5px;
+  width: 0;
+  left: 0;
+  background-color: var(--main-color-1);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn.secondary-btn:hover::before {
+  width: 100%;
+}
+.showCase-images {
+  position: relative;
+  width: 90%;
+  min-height: calc(100% + 120px);
+  margin-top: -120px;
+  border-radius: 0 0 80px 80px;
+  background-image: linear-gradient(
+    124deg,
+    var(--main-color-1) 50%,
+    var(--main-color-2) 50%
+  );
+}
+/* .Person {
+  width: 850px !important;
+} */
+
+.showCase-images .Person {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.Shape-Dots {
+  width: 112px;
+}
+.showCase-images .Shape-Dots {
+  position: absolute;
+  left: 100%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+.showCase-images .Shape-Circle {
+  position: absolute;
+  width: 190px;
+  left: 0;
+  top: 80%;
+  transform: translate(-50%, -50%);
+}
+.Square {
+  width: 75px;
+}
+.showCaseArea .Square {
+  position: absolute;
+  left: 25%;
+  bottom: 125px;
+  transform: translate(-50%, -50%);
+}
+
+/* --------------- About Section Styling --------------- */
+.about .Container {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 190px 190px;
+  grid-template-rows: 190px 190px;
+  justify-content: center;
+  column-gap: 2.5rem;
+  row-gap: 100px;
+  margin-right: 2rem;
+  position: relative;
+}
+.about-card {
+  background-color: var(--bg-color-1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.about-card:nth-child(1) {
+  border-radius: 40px 40px 5px 40px;
+}
+.about-card:nth-child(2) {
+  margin-top: 50px;
+  border-radius: 40px 40px 40px 5px;
+}
+.about-card:nth-child(3) {
+  margin-top: -50px;
+  border-radius: 40px 5px 40px 40px;
+}
+.about-card:nth-child(4) {
+  border-radius: 5px 40px 40px 40px;
+}
+.about-card h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.about-card::before {
+  content: "";
+  width: 210px;
+  height: 210px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 15px solid var(--main-color-1);
+  opacity: 0.06;
+  z-index: -1;
+}
+.about-card .text {
+  font-family: "GE SS", sans-serif;
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.triangle {
+  position: absolute;
+  width: 105px;
+  right: 15%;
+  top: 25%;
+}
+
+/* --------------- Skills Section Styling --------------- */
+.skills-box {
+  background-color: var(--bg-color-transparent);
+  box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(75px);
+  padding: 5rem 6rem;
+  border-radius: 20px;
+  width: 100%;
+}
+.box-desc {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.skills-warp {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.skills {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+}
+.sk-process {
+  position: relative;
+
+  width: 150px;
+  height: 150px;
+}
+.sk-process svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.sk-process svg circle {
+  fill: var(--bg-color-3);
+  stroke-width: 5px;
+  stroke: var(--main-color-1);
+  stroke-linecap: round;
+  stroke-dasharray: 427;
+  stroke-dashoffset: 427;
+}
+@keyframes process {
+  to {
+    stroke-dashoffset: var(--target);
+  }
+}
+
+.sk-title {
+  color: var(--heading-color);
+  font-weight: 400;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+}
+.counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--heading-color);
+}
+.counter span {
+  font-size: 2.45rem;
+}
+/* --------------- Sevices Section Styling --------------- */
+.services .Container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1.03fr;
+  column-gap: 6rem;
+}
+.milestone {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+.milestone h2 {
+  color: var(--heading-color);
+  font-size: 1.3rem;
+}
+.milestone h2 span {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-right: 0.1rem;
+}
+.milestone h5 {
+  color: var(--heading-color);
+  font-size: 0.95rem;
+  line-height: 0.9;
+  font-weight: 500;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row: 2rem;
+  row-gap: 4.4rem;
+}
+.srv-card {
+  background: var(--bg-color-2);
+  border-radius: 15px;
+}
+.srv-card .text {
+  margin: 0.7rem 0;
+}
+/* --------------- Portfolio Section Styling --------------- */
+
+/* --------------- Testimonials Section Styling --------------- */
+
+/* --------------- Contact Section Styling --------------- */
+
+/* --------------- Subscription Section Styling --------------- */
+
+/* --------------- Footer Styling --------------- */
+
+/* --------------- 1000px Screens --------------- */
+
+@media (max-width: 1000px) {
+}
+
+/* --------------- 768px Screens --------------- */
+
+@media (max-width: 768px) {
+}
+
+/* --------------- 500px Screens --------------- */
+
+@media (max-width: 500px) {
+}
