@@ -510,16 +510,45 @@ nav.Container {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-row: 2rem;
+  column-gap: 2rem !important;
   row-gap: 4.4rem;
+  position: relative;
 }
 .srv-card {
   background: var(--bg-color-2);
   border-radius: 15px;
+  padding: 2.5rem 2.1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.srv-card h3 {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 .srv-card .text {
   margin: 0.7rem 0;
+  font-size: 0.7rem;
+}
+.srv-card:nth-child(2) {
+  transform: translateY(2.2rem);
+}
+.srv-card:nth-child(3) {
+  transform: translateY(-2.2rem);
+}
+.services-grid::before {
+  content: "";
+  width: 210px;
+  height: 210px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 15px solid var(--main-color-1);
+  opacity: 0.06;
+  z-index: -1;
 }
 /* --------------- Portfolio Section Styling --------------- */
 
