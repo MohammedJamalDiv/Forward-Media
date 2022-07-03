@@ -11,7 +11,17 @@
       width="30"
     />
     <title>Foward Media</title>
-
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"
+      integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
     <!-- --------- Lord-icon Library --------- -->
     <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
     <!-- --------- Scroll Reveal Library --------- -->
@@ -59,7 +69,7 @@
               <a href="#" class="nav-link">Contact</a>
             </li>
           </ul>
-          <i class="uil uil-moon ToggleBtn"></i>
+          <div class="ToggleBtn" id="svg"></div>
         </div>
       </nav>
     </header>
@@ -306,6 +316,25 @@
 
     <!-- --------- Portfolio Section --------- -->
     <section id="Portfolio" class="protfolio section">
+      <div class="model">
+        <div class="model-overlay"></div>
+        <div class="slider-wrap">
+          <div class="prev-btn navagation">
+            <i class="uil uil-angle-left"></i>
+          </div>
+          <div class="images">
+            <img src="./assets/port1.jpg" />
+            <img src="./assets/port2.png" />
+            <img src="./assets/port3.jpg" />
+            <img src="./assets/port4.png" />
+            <img src="./assets/port5.png" />
+            <img src="./assets/port6.jpg" />
+          </div>
+          <div class="next-btn navagation">
+            <i class="uil uil-angle-right"></i>
+          </div>
+        </div>
+      </div>
       <div class="Container">
         <div class="protfolio-header">
           <div class="protfolio-title">
@@ -313,61 +342,111 @@
             <h3 class="heading">Lastest Projects</h3>
           </div>
           <div class="Filter-btns">
-            <button class="filter-btn">All</button>
-            <button class="filter-btn">Products</button>
-            <button class="filter-btn">Interacting</button>
-            <button class="filter-btn">Web App</button>
+            <button class="filter-btn" data-filter="All">All</button>
+            <button class="filter-btn" data-filter=".Products">Products</button>
+            <button class="filter-btn" data-filter=".Interacting">
+              Interacting
+            </button>
+            <button class="filter-btn" data-filter=".Web">Web App</button>
           </div>
         </div>
         <div class="protfolio-gallery">
-          <div class="prt-card">
+          <div class="mix prt-card Web">
             <div class="prt-img">
               <img src="./assets/port1.jpg" alt="port1" />
+              <div class="prt-overlay">
+                <span class="prt-icon zoom-icon">
+                  <i class="uil uil-search-plus"></i>
+                </span>
+                <a href="#" class="prt-icon">
+                  <i class="uil uil-link-h"></i>
+                </a>
+              </div>
             </div>
             <div class="prt-desc">
               <h3>Olido interaction</h3>
               <a href="#" class="btn secondary-btn sm">Read More</a>
             </div>
           </div>
-          <div class="prt-card">
+          <div class="mix prt-card Products">
             <div class="prt-img">
               <img src="./assets/port2.png" alt="port1" />
+              <div class="prt-overlay">
+                <span class="prt-icon zoom-icon">
+                  <i class="uil uil-search-plus"></i>
+                </span>
+                <a href="#" class="prt-icon">
+                  <i class="uil uil-link-h"></i>
+                </a>
+              </div>
             </div>
             <div class="prt-desc">
               <h3>Olido interaction</h3>
               <a href="#" class="btn secondary-btn sm">Read More</a>
             </div>
           </div>
-          <div class="prt-card">
+          <div class="mix prt-card Interacting">
             <div class="prt-img">
               <img src="./assets/port3.jpg" alt="port1" />
+              <div class="prt-overlay">
+                <span class="prt-icon zoom-icon">
+                  <i class="uil uil-search-plus"></i>
+                </span>
+                <a href="#" class="prt-icon">
+                  <i class="uil uil-link-h"></i>
+                </a>
+              </div>
             </div>
             <div class="prt-desc">
               <h3>Olido interaction</h3>
               <a href="#" class="btn secondary-btn sm">Read More</a>
             </div>
           </div>
-          <div class="prt-card">
+          <div class="mix prt-card Web">
             <div class="prt-img">
               <img src="./assets/port4.png" alt="port1" />
+              <div class="prt-overlay">
+                <span class="prt-icon zoom-icon">
+                  <i class="uil uil-search-plus"></i>
+                </span>
+                <a href="#" class="prt-icon">
+                  <i class="uil uil-link-h"></i>
+                </a>
+              </div>
             </div>
             <div class="prt-desc">
               <h3>Olido interaction</h3>
               <a href="#" class="btn secondary-btn sm">Read More</a>
             </div>
           </div>
-          <div class="prt-card">
+          <div class="mix prt-card Web">
             <div class="prt-img">
               <img src="./assets/port5.png" alt="port1" />
+              <div class="prt-overlay">
+                <span class="prt-icon zoom-icon">
+                  <i class="uil uil-search-plus"></i>
+                </span>
+                <a href="#" class="prt-icon">
+                  <i class="uil uil-link-h"></i>
+                </a>
+              </div>
             </div>
             <div class="prt-desc">
               <h3>Olido interaction</h3>
               <a href="#" class="btn secondary-btn sm">Read More</a>
             </div>
           </div>
-          <div class="prt-card">
+          <div class="mix prt-card Web">
             <div class="prt-img">
               <img src="./assets/port6.jpg" alt="port1" />
+              <div class="prt-overlay">
+                <span class="prt-icon zoom-icon">
+                  <i class="uil uil-search-plus"></i>
+                </span>
+                <a href="#" class="prt-icon">
+                  <i class="uil uil-link-h"></i>
+                </a>
+              </div>
             </div>
             <div class="prt-desc">
               <h3>Olido interaction</h3>
@@ -378,7 +457,16 @@
       </div>
     </section>
     <!-- --------- Testimonials Section --------- -->
-
+    <div class="Testimonials section">
+      <div class="Container">
+        <div class="section-background"></div>
+        <div class="reviews"></div>
+        <div class="Testimonials-Title">
+          <h3 class="subheading">Testimonials</h3>
+          <h1 class="heading">Hear from my happy clients</h1>
+        </div>
+      </div>
+    </div>
     <!-- --------- Contact Section --------- -->
 
     <!-- --------- Subscription Section --------- -->
