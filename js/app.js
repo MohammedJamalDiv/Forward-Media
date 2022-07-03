@@ -98,6 +98,7 @@ zoomIcon.forEach((icon, index) => {
     changeImage(Currentindex);
   });
 });
+
 BtnNext.addEventListener("click", (e) => {
   console.log(e.target);
   if (Currentindex === 0) {
@@ -131,6 +132,30 @@ Overlay.addEventListener("click", (e) => {
 /* --------------- Modal Pop Up Animation Animation --------------- */
 
 /* --------------- Change Active Link On Scroll --------------- */
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
+  speed: 500,
+  autoplay: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
 
 /* --------------- Change Page Theme --------------- */
 
