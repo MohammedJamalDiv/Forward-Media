@@ -575,6 +575,7 @@ nav.Container {
   margin-left: 1.3rem;
   cursor: pointer;
   text-transform: uppercase;
+  margin-bottom: 4rem;
 }
 .protfolio-gallery {
   display: grid;
@@ -582,14 +583,30 @@ nav.Container {
   gap: 2rem;
 }
 
-.prt-img {
+.prt-card {
   border-radius: 15px;
   overflow: hidden;
   background-color: var(--bg-color-2);
 }
+.prt-desc {
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
 
+  align-items: center;
+}
+.prt-desc h3 {
+  font-size: 0.95rem;
+  color: var(--heading-color);
+  font-weight: 600;
+  text-transform: capitalize;
+}
 .prt-img img {
-  width: 100%;
+  width: 105%;
+}
+.btn.secondary-btn.sm {
+  padding: 0.07rem 0.1rem;
+  font-size: 0.78rem;
 }
 /* --------------- Testimonials Section Styling --------------- */
 
